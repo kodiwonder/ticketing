@@ -18,7 +18,7 @@ it('returns the ticket if the ticket is found', async () => {
         .post('/api/tickets')
         .set('Cookie', global.signin())
         .send({ title, price })
-        .expect(201); 
+        //.expect(201); 
     const id = response.body.id;
     const ticketResponse = await request(app).get(`/api/tickets/${id}`).send()
     //.expect(200);
