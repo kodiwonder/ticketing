@@ -1,0 +1,21 @@
+
+
+name: auth
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+    paths: "/auth/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v2
+
+      - run: cd /auth && npm run i && npm run test
+        
